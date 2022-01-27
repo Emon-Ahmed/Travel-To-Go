@@ -1,8 +1,11 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import SubHeader from "../Components/SubHeader";
+import useAuth from "../Hooks/useAuth";
 
 const Compare = () => {
+  const { compare } = useAuth();
+  console.log(compare);
   return (
     <div>
       <SubHeader pageName="Compare" />
@@ -16,21 +19,13 @@ const Compare = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-            </tr>
+            {compare.map((i) => (
+              <tr>
+                <th scope="row">1</th>
+                <td>{i.title}</td>
+                <td>{i.rating}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </Container>

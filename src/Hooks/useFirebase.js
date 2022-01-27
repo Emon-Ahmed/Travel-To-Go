@@ -14,6 +14,7 @@ initializeAuth();
 
 const useFirebase = () => {
   const [user, setUser] = useState({});
+  const [compare, setCompare] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [admin, setAdmin] = useState(false);
@@ -103,7 +104,9 @@ const useFirebase = () => {
     logout,
     loginUser,
     error,
-    googleAuth
+    googleAuth,
+    compare,
+    setCompare
   };
 };
 
