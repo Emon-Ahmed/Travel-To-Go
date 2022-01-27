@@ -5,12 +5,14 @@ import SubHeader from "../Components/SubHeader";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-  
+
   useEffect(() => {
     fetch("http://localhost:5000/blogs")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
+
+  // Get Current Blogs
 
   return (
     <>
@@ -25,11 +27,6 @@ const Blogs = () => {
         </div>
         <nav className="py-5" aria-label="Page navigation example">
           <ul class="pagination pagination-lg justify-content-center">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">
-                Previous
-              </a>
-            </li>
             <li class="page-item">
               <a class="page-link" href="#">
                 1
@@ -43,11 +40,6 @@ const Blogs = () => {
             <li class="page-item">
               <a class="page-link" href="#">
                 3
-              </a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">
-                Next
               </a>
             </li>
           </ul>

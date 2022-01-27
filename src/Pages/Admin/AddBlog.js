@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const AddBlog = () => {
   const navigate = useNavigate();
+
+  const {admin} = useAuth()
 
   const titleRef = useRef();
   const imgRef = useRef();
@@ -41,7 +44,7 @@ const AddBlog = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newBlog),
+      body: JSON.stringify({...newBlog, status: admin ? 'approved' : 'pending' }),
     })
       .then((res) => res.json())
       .then((data) => {
