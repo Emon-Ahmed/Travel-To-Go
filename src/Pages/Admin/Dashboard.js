@@ -5,7 +5,7 @@ import SubHeader from "../../Components/SubHeader";
 import useAuth from "../../Hooks/useAuth";
 
 const Dashboard = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, admin } = useAuth();
   return (
     <div>
       <SubHeader pageName="Dashboard" />
@@ -25,24 +25,27 @@ const Dashboard = () => {
                   <Link className="nav-link" to="/dashboard/addblog">
                     Add Blog / Experience
                   </Link>
-                  <Link className="nav-link" to="/dashboard/addCategory">
-                    Add Category
-                  </Link>
-                  <Link className="nav-link" to="/dashboard/blogList">
-                    Blog List
-                  </Link>
-                  <Link className="nav-link" to="/dashboard/categoryList">
-                    Category List
-                  </Link>
-                  <Link className="nav-link" to="/dashboard/makeAdmin">
-                    Make Admin
-                  </Link>
-                  <Link className="nav-link" to="/dashboard/adminApprove">
-                    Blog Approval
-                  </Link>
-                  <Link 
-                  onClick={logout}
-                  className="nav-link logout-bg" to="/">
+                  {admin && (
+                    <>
+                      <Link className="nav-link" to="/dashboard/addCategory">
+                        Add Category
+                      </Link>
+                      <Link className="nav-link" to="/dashboard/blogList">
+                        Blog List
+                      </Link>
+                      <Link className="nav-link" to="/dashboard/categoryList">
+                        Category List
+                      </Link>
+                      <Link className="nav-link" to="/dashboard/makeAdmin">
+                        Make Admin
+                      </Link>
+                      <Link className="nav-link" to="/dashboard/adminApprove">
+                        Blog Approval
+                      </Link>
+                    </>
+                  )}
+
+                  <Link onClick={logout} className="nav-link logout-bg" to="/">
                     Log Out
                   </Link>
                 </nav>
