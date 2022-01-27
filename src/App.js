@@ -27,16 +27,15 @@ function App() {
         <Route path="compare" element={<Compare />} />
         <Route path="about" element={<About />} />
         <Route path="account" element={<Account />} />
-        <Route path="dashboard" element={<Dashboard />} >
+        <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<Welcome />} />
           <Route path="addBlog" element={<AddBlog />} />
-          <Route path="blogList" element={<BlogList />} >
-            <Route path="updateBlog" element={<UpdateBlog />} />
-          </Route>
+          <Route path="blogList" element={<BlogList />} />
           <Route path="placeList" element={<PlaceList />} />
           <Route path="addPlaces" element={<AddPlaces />} />
           <Route path="makeAdmin" element={<MakeAdmin />} />
           <Route path="adminApprove" element={<AdminApprove />} />
+          <Route path="/dashboard/blogList/:id" element={<UpdateBlog />} />
         </Route>
       </Routes>
       <Footer />

@@ -12,19 +12,19 @@ const Account = () => {
         <div className="row">
           <div className="col-6">
             <h1 className="mb-4">LOGIN</h1>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="floatingInput"
                 placeholder="name@example.com"
               />
               <label for="floatingInput">Email address</label>
             </div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="floatingPassword"
                 placeholder="Password"
               />
@@ -48,37 +48,37 @@ const Account = () => {
 
           <div className="col-6">
             <h1 className="mb-4">SING UP</h1>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="floatingInput"
                 placeholder="Your Name"
               />
               <label for="floatingInput">Your Name</label>
             </div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="floatingInput"
                 placeholder="name@example.com"
               />
               <label for="floatingInput">Email address</label>
             </div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="floatingPassword"
                 placeholder="Password"
               />
               <label for="floatingPassword">Password</label>
             </div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="floatingPassword"
                 placeholder="Confirm Password"
               />

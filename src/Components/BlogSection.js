@@ -14,9 +14,7 @@ const BlogSection = () => {
         </p>
       </div>
       <div className="d-flex justify-content-center align-items-center py-5">
-        <Blog />
-        <Blog />
-        <Blog />
+        
       </div>
     </Container>
   );

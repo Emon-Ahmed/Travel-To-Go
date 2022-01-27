@@ -5,7 +5,7 @@ const AdminApprove = () => {
     <div>
       <h1 className="mb-3">Approve New Blog</h1>
 
-      <table class="table text-center">
+      <table className="table text-center">
         <thead>
           <tr>
             <th scope="col">#</th>
