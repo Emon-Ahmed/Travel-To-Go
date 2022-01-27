@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AddPlaces = () => {
+const AddCategory = () => {
+  const navigate = useNavigate();
+
   const catTitle = useRef();
   const catBanner = useRef();
 
@@ -19,7 +22,7 @@ const AddPlaces = () => {
       .then((data) => {
         if (data.insertedId) {
           alert("Category Added");
-          e.target.reset();
+          navigate("/dashboard/categoryList");
         }
       });
   };
@@ -57,4 +60,4 @@ const AddPlaces = () => {
   );
 };
 
-export default AddPlaces;
+export default AddCategory;

@@ -2,10 +2,10 @@ import React from "react";
 import SubHeader from "../Components/SubHeader";
 import PlaceSection from "../Components/PlaceSection";
 
-const Places = () => {
+const Category = () => {
   return (
     <div>
-      <SubHeader pageName="Places" />
+      <SubHeader pageName="Category" />
       <div className="mt-4 pt-5">
         <PlaceSection />
       </div>
@@ -13,4 +13,4 @@ const Places = () => {
   );
 };
 
-export default Places;
+export default Category;

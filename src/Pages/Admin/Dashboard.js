@@ -23,13 +23,13 @@ const Dashboard = () => {
                   <Link className="nav-link" to="/dashboard/addblog">
                     Add Blog / Experience
                   </Link>
-                  <Link className="nav-link" to="/dashboard/addPlaces">
+                  <Link className="nav-link" to="/dashboard/addCategory">
                     Add Category
                   </Link>
                   <Link className="nav-link" to="/dashboard/blogList">
                     Blog List
                   </Link>
-                  <Link className="nav-link" to="/dashboard/placeList">
+                  <Link className="nav-link" to="/dashboard/categoryList">
                     Category List
                   </Link>
                   <Link className="nav-link" to="/dashboard/makeAdmin">

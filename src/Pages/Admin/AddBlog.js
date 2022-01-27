@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddBlog = () => {
+  const navigate = useNavigate();
+  
   const titleRef = useRef();
   const imgRef = useRef();
   const travelerRef = useRef();
@@ -45,7 +48,7 @@ const AddBlog = () => {
       .then((data) => {
         if (data.insertedId) {
           alert("Blog Added");
-          e.target.reset();
+          navigate("/dashboard/blogList");
         }
       });
   };

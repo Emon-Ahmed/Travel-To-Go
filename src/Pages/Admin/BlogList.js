@@ -35,7 +35,7 @@ const BlogList = () => {
         <h1 className="mb-3">Blog List</h1>
         <div className="row">
           {blogs?.map((blog) => (
-            <div className="col-4">
+            <div className="col-4 my-2">
               <div className="shadow-lg">
                 <img
                   className="w-100"

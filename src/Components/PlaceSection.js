@@ -1,18 +1,19 @@
-import React from "react";
-import slide1 from "../Images/place1.jpg";
-
-// Import Swiper React components
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper";
-// install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
 const PlaceSection = () => {
+  const [category, setCategory] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/category")
+      .then((res) => res.json())
+      .then((data) => setCategory(data));
+  }, []);
+
   return (
     <div className="my-5 custom-container">
       <div className="placeSectionInner">
@@ -30,48 +31,17 @@ const PlaceSection = () => {
             slidesPerGroup={2}
             loop={true}
             loopFillGroupWithBlank={true}
-            //   pagination={{
-            //     clickable: true,
-            //   }}
             navigation={true}
             className="mySwiper"
           >
-            <SwiperSlide>
-              <div className="image-container">
-                <img className="slideImage" src={slide1} alt="SLIDES" />
-                <h1 className="slideText">Text</h1>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-container">
-                <img className="slideImage" src={slide1} alt="SLIDES" />
-                <h1 className="slideText">Text</h1>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-container">
-                <img className="slideImage" src={slide1} alt="SLIDES" />
-                <h1 className="slideText">Text</h1>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-container">
-                <img className="slideImage" src={slide1} alt="SLIDES" />
-                <h1 className="slideText">Text</h1>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-container">
-                <img className="slideImage" src={slide1} alt="SLIDES" />
-                <h1 className="slideText">Text</h1>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-container">
-                <img className="slideImage" src={slide1} alt="SLIDES" />
-                <h1 className="slideText">Text</h1>
-              </div>
-            </SwiperSlide>
+            {category.map((i) => (
+              <SwiperSlide>
+                <div className="image-container">
+                  <img className="slideImage" src={i.Banner} alt="SLIDES" />
+                  <h2 className="slideText">{i.Title}</h2>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

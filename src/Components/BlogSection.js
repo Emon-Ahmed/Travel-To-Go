@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Blog from "./Blog";
 import { Container } from "react-bootstrap";
 
 const BlogSection = () => {
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/blogs")
+      .then((res) => res.json())
+      .then((data) => setBlogs(data));
+  }, []);
   return (
     <Container className="my-5 py-5">
       <div className="text-center">
@@ -14,7 +20,11 @@ const BlogSection = () => {
         </p>
       </div>
       <div className="d-flex justify-content-center align-items-center py-5">
-        
+          {blogs?.map((i) => (
+            <div  key={i?._id} className="col-4">
+              <Blog blog={i}/>
+            </div>
+          )).splice(0,3)}
       </div>
     </Container>
   );

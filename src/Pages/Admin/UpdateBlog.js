@@ -21,7 +21,6 @@ const UpdateBlog = () => {
   useEffect(() => {
     setUpdate(updateBlog);
   }, [updateBlog]);
-  console.log(update);
 
   useEffect(() => {
     const url = `http://localhost:5000/blogs/${id}`;
@@ -50,14 +49,12 @@ const UpdateBlog = () => {
         if (data.modifiedCount > 0) {
           navigate("/dashboard/blogList");
         }
-        console.log(data);
       });
   };
   return (
     <>
       <div className="container py-2">
         <h1 className="mb-3">Update Your Blog or Your Experience</h1>
-        <p>{id}</p>
         <div className="form-floating mb-3">
           <input
             type="text"

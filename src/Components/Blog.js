@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 
 const Blog = ({blog}) => {
   return (
-    <div className="mx-3">
+    <div className="mx-3 my-3">
       <div className="blog">
         <img src={blog.img} alt="Blog" />
         <div className="p-3">

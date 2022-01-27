@@ -19,11 +19,11 @@ const SubHeader = ({pageName}) => {
                   <Nav.Link as={Link} to="/" className="text-white px-3">
                     Home
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/places" className="text-white px-3">
-                    Place
-                  </Nav.Link>
                   <Nav.Link as={Link} to="/blogs" className="text-white px-3">
                     Explore Blogs
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/category" className="text-white px-3">
+                  Category
                   </Nav.Link>
                   <Nav.Link as={Link} to="/compare" className="text-white px-3">
                     Compare

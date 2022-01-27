@@ -13,7 +13,7 @@ const Blogs = () => {
 
   return (
     <>
-      <SubHeader pageName="Blogs" />
+      <SubHeader pageName="Explore Blogs" />
       <Container className="py-5">
         <div className="row py-5">
           {blogs?.map((i) => (
