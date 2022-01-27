@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AddBlog = () => {
   const navigate = useNavigate();
-  
+
   const titleRef = useRef();
   const imgRef = useRef();
   const travelerRef = useRef();
@@ -36,7 +36,6 @@ const AddBlog = () => {
       date,
       rating,
     };
-
     fetch("http://localhost:5000/blogs", {
       method: "POST",
       headers: {
@@ -52,6 +51,15 @@ const AddBlog = () => {
         }
       });
   };
+
+  // For Category Showing
+  const [categoryShow, setCategoryShow] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/category")
+      .then((res) => res.json())
+      .then((data) => setCategoryShow(data));
+  }, []);
+
   return (
     <div>
       <h1 className="mb-3">Add Your Blog or Your Experience</h1>
@@ -105,9 +113,9 @@ const AddBlog = () => {
           ref={categoryRef}
         >
           <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          {categoryShow.map((i) => (
+            <option value={i.Title}>{i.Title}</option>
+          ))}
         </select>
         <label for="floatingSelect">Blog Category</label>
       </div>
