@@ -17,6 +17,8 @@ import BlogList from "./Pages/Admin/BlogList";
 import CategoryList from "./Pages/Admin/CategoryList";
 import UpdateBlog from "./Pages/Admin/UpdateBlog";
 import UpdateCategory from "./Pages/Admin/UpdateCategory";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import BlogDetails from "./Components/BlogDetails";
 
 function App() {
   return (
@@ -25,10 +27,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="category" element={<Category />} />
         <Route path="blogs" element={<Blogs />} />
+        <Route path="blogs/:id" element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
         <Route path="compare" element={<Compare />} />
         <Route path="about" element={<About />} />
         <Route path="account" element={<Account />} />
-        <Route path="dashboard" element={<Dashboard />}>
+        <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
           <Route index element={<Welcome />} />
           <Route path="addBlog" element={<AddBlog />} />
           <Route path="addCategory" element={<AddCategory />} />
@@ -37,7 +40,10 @@ function App() {
           <Route path="makeAdmin" element={<MakeAdmin />} />
           <Route path="adminApprove" element={<AdminApprove />} />
           <Route path="/dashboard/blogList/:id" element={<UpdateBlog />} />
-          <Route path="/dashboard/categoryList/:id" element={<UpdateCategory/>} />
+          <Route
+            path="/dashboard/categoryList/:id"
+            element={<UpdateCategory />}
+          />
         </Route>
       </Routes>
       <Footer />

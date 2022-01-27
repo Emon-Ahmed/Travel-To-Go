@@ -1,33 +1,14 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "./../Hooks/useAuth";
 
-export default function PrivateRoute({ children, ...rest }) {
-  const { user, loading } = useAuth();
-  if (loading) {
-    return (
-      <div className="d-flex m-5 justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    )
+export default function PrivateRoute({ children }) {
+  let { user} = useAuth();
+  let location = useLocation();
+
+  if (!user.email) {
+    return <Navigate to="/account" state={{ from: location }} replace />;
   }
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        user.email ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/account",
-              state: { from: location },
-            }}
-          />
-        )
-      }
-    />
-  );
+
+  return children;
 }

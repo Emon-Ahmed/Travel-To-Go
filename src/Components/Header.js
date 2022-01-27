@@ -2,8 +2,10 @@ import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsBoxArrowUpRight, BsFillPlayFill } from "react-icons/bs";
+import useAuth from "../Hooks/useAuth";
 
 const Header = () => {
+  const { user, logout } = useAuth();
   return (
     <div className="main-banner">
       <div className="nav-bar py-3">
@@ -30,9 +32,14 @@ const Header = () => {
                 <Nav.Link as={Link} to="/about" className="text-white px-3">
                   About
                 </Nav.Link>
-                <Nav.Link as={Link} to="/account" className="text-black ps-4 icon-area back-glow rounded">
+                {
+                  user.email ? <Nav.Link as={Link} to="/dashboard" className="text-black ps-4 icon-area back-glow rounded">
+                  Dashboard <span className="singup-icon rounded ms-2 text-left"><BsBoxArrowUpRight /></span>
+                  </Nav.Link> : <Nav.Link as={Link} to="/account" className="text-black ps-4 icon-area back-glow rounded">
                       Sing Up <span className="singup-icon rounded ms-2 text-left"><BsBoxArrowUpRight /></span>
                 </Nav.Link>
+                }
+                
               </Nav>
             </Navbar.Collapse>
           </Container>

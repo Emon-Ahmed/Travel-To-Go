@@ -23,7 +23,7 @@ const UpdateCategory = () => {
       .then((data) => setUpdateCategory(data));
   }, []);
 
-  // Update Blog
+  // Update Category
   const handleUpdate = (e) => {
     const { name, value } = e.target;
     setUpdate({ ...update, [name]: value });

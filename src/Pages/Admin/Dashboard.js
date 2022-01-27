@@ -1,9 +1,11 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import SubHeader from "../../Components/SubHeader";
+import useAuth from "../../Hooks/useAuth";
 
 const Dashboard = () => {
+  const { user, logout } = useAuth();
   return (
     <div>
       <SubHeader pageName="Dashboard" />
@@ -38,7 +40,9 @@ const Dashboard = () => {
                   <Link className="nav-link" to="/dashboard/adminApprove">
                     Blog Approval
                   </Link>
-                  <Link className="nav-link logout-bg" to="/">
+                  <Link 
+                  onClick={logout}
+                  className="nav-link logout-bg" to="/">
                     Log Out
                   </Link>
                 </nav>
