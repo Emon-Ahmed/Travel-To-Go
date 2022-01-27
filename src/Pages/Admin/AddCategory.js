@@ -11,7 +11,7 @@ const AddCategory = () => {
     const Title = catTitle.current.value;
     const Banner = catBanner.current.value;
     const newCategory = { Title, Banner };
-    fetch("http://localhost:5000/category", {
+    fetch("https://ancient-scrubland-54558.herokuapp.com/category", {
       method: "POST",
       headers: {
         "content-type": "application/json",

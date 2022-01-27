@@ -9,7 +9,7 @@ SwiperCore.use([Pagination, Navigation]);
 const PlaceSection = () => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/category")
+    fetch("https://ancient-scrubland-54558.herokuapp.com/category")
       .then((res) => res.json())
       .then((data) => setCategory(data));
   }, []);

@@ -5,14 +5,14 @@ const AdminApprove = () => {
   const [approve, setApprove] = useState([]);
 const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/pendingBlogs")
+    fetch("https://ancient-scrubland-54558.herokuapp.com/pendingBlogs")
       .then((res) => res.json())
       .then((data) => setApprove(data));
   }, []);
 
   const handleApprove = (id) =>{
     console.log(id)
-    fetch(`http://localhost:5000/updateBlog/${id}`, {
+    fetch(`https://ancient-scrubland-54558.herokuapp.com/updateBlog/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,7 @@ const navigate = useNavigate();
   }
   const handleDelete = (id) =>{
     console.log(id)
-    fetch(`http://localhost:5000/blog/delete/${id}`, {
+    fetch(`https://ancient-scrubland-54558.herokuapp.com/blog/delete/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

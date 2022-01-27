@@ -7,7 +7,7 @@ const BlogDetails = () => {
   const { id } = useParams();
   const [blogDetails, setBlogDetails] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/blogs/${id}`;
+    const url = `https://ancient-scrubland-54558.herokuapp.com/blogs/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBlogDetails(data));

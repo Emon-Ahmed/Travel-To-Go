@@ -17,7 +17,7 @@ const UpdateCategory = () => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/category/${id}`;
+    const url = `https://ancient-scrubland-54558.herokuapp.com/category/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUpdateCategory(data));
@@ -30,7 +30,7 @@ const UpdateCategory = () => {
   };
 
   const handleUpdateCategory = (e) => {
-    const url = `http://localhost:5000/category/${id}`;
+    const url = `https://ancient-scrubland-54558.herokuapp.com/category/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

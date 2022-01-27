@@ -39,7 +39,7 @@ const AddBlog = () => {
       date,
       rating,
     };
-    fetch("http://localhost:5000/blogs", {
+    fetch("https://ancient-scrubland-54558.herokuapp.com/blogs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -58,7 +58,7 @@ const AddBlog = () => {
   // For Category Showing
   const [categoryShow, setCategoryShow] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/category")
+    fetch("https://ancient-scrubland-54558.herokuapp.com/category")
       .then((res) => res.json())
       .then((data) => setCategoryShow(data));
   }, []);

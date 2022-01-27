@@ -11,7 +11,7 @@ const Blogs = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch("http://localhost:5000/blogs")
+    fetch("https://ancient-scrubland-54558.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) =>{
         setLoading(false)

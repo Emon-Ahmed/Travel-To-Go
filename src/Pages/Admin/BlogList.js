@@ -6,7 +6,7 @@ const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://ancient-scrubland-54558.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
@@ -15,7 +15,7 @@ const BlogList = () => {
   const handleBlogDelete = (id) => {
     const proceed = window.confirm("Are You Sure?");
     if (proceed) {
-      const url = `http://localhost:5000/blogs/${id}`;
+      const url = `https://ancient-scrubland-54558.herokuapp.com/blogs/${id}`;
       fetch(url, {
         method: "DELETE",
       })
