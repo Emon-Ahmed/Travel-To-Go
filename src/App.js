@@ -19,8 +19,14 @@ import UpdateBlog from "./Pages/Admin/UpdateBlog";
 import UpdateCategory from "./Pages/Admin/UpdateCategory";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import BlogDetails from "./Components/BlogDetails";
+import { useEffect } from "react";
+
+
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
       <Routes>

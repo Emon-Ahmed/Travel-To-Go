@@ -249,7 +249,7 @@ Header Style
   padding: 20px 10px;
   margin: 20px 10px;
   border-left: 4px solid #ffea00;
-  background-color: #d6d6d6;
+  background-color: #F5F5F5;
   color: black;
 }
 a {
@@ -287,6 +287,25 @@ a {
   }
   .image-container h2 {
     font-size: 16px;
+  }
+  .navbar-nav {
+    display: inline-block;
+  }
+
+  .navbar-default .navbar-toggle {
+    border-color: #ffffff;
+  }
+  .navbar-default .navbar-toggle:hover,
+  .navbar-default .navbar-toggle:focus {
+    background-color: #ffffff;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+  }
+  .list-area .d-flex{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -377,7 +396,7 @@ a {
     align-items: center !important; */
   }
   .blog {
-    width: 80%;
+    width: 100%;
   }
   .blog img {
     width: 100%;
@@ -385,6 +404,32 @@ a {
   }
   .innerBlog .d-flex {
     flex-direction: row !important;
+  }
+  .hero-section2 div {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  /* .display-4{
+    font-size: 18px !important;
+  } */
+  .hero-section2 .d-flex {
+    flex-direction: column;
+  }
+  .about-section .w-50 {
+    width: 100% !important;
+  }
+  .about-section .d-flex {
+    flex-direction: column;
+  }
+  .nav-link {
+    padding-right: 10px !important;
+  }
+  .navbar-nav {
+    display: inline-block;
+  }
+  .navbar-light .navbar-toggler {
+    color: white;
+    border-color: rgba(0, 0, 0, 0.1);
   }
 }
 

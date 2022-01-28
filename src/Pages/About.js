@@ -5,10 +5,9 @@ import AboutImg from "./../Images/about.png";
 
 const About = () => {
   return (
-    <div>
+    <>
       <SubHeader pageName="About" />
-      <div className="d-flex justify-content-between">
-        <Container className="my-5">
+        <Container className="about-section my-5">
           <div className="back-color d-flex justify-content-between align-items-center">
             <div className="w-50">
               <h1 className="display-5 fw-bolder">
@@ -40,8 +39,7 @@ const About = () => {
             <img className="about-img" src={AboutImg} alt="ABOUT" />
           </div>
         </Container>
-      </div>
-    </div>
+    </>
   );
 };
 

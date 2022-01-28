@@ -5,7 +5,7 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import useAuth from "../Hooks/useAuth";
 
 const SubHeader = ({ pageName }) => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   return (
     <div>
       <div className="sub-banner">

@@ -4,12 +4,16 @@ import useAuth from "../Hooks/useAuth";
 import { Container } from "react-bootstrap";
 import SubHeader from "../Components/SubHeader";
 import { BsBoxArrowInUpRight } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Account = () => {
   const [loginData, setLoginData] = useState({});
   const [regiData, setRegiData] = useState({});
   const { regiUser, loginUser, googleAuth, user, error } = useAuth();
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const redirect_uri = location.state?.from || "/blogs";
 
   const handleLog = (e) => {
     const field = e.target.name;
@@ -18,9 +22,11 @@ const Account = () => {
     newLoginData[field] = value;
     setLoginData(newLoginData);
   };
-
+  const redirect = () => {
+    navigate(redirect_uri);
+  };
   const loginSubmit = (e) => {
-    loginUser(loginData.email, loginData.password);
+    loginUser(loginData.email, loginData.password, redirect);
   };
 
   const handleRegi = (e) => {
@@ -32,7 +38,10 @@ const Account = () => {
   };
 
   const registerSubmit = (e) => {
-    regiUser(regiData.email, regiData.password);
+    regiUser(regiData.email, regiData.password, redirect);
+  };
+  const handleGoogle = (e) => {
+    googleAuth(redirect);
   };
 
   return (
@@ -41,7 +50,7 @@ const Account = () => {
       <Container className="py-5 my-5">
         {user?.email && (
           <div className="my-3 alert alert-success" role="alert">
-            You Logged Successfully.
+            You Logged Successfully. Go To <Link to="dashboard">Dashboard</Link>
           </div>
         )}
         {error && (
@@ -50,7 +59,7 @@ const Account = () => {
           </div>
         )}
         <div className="row">
-          <div className="col-6">
+          <div className="col-md-6 my-3">
             <h1 className="mb-4">LOGIN</h1>
             <div className="form-floating mb-3">
               <input
@@ -74,7 +83,7 @@ const Account = () => {
               />
               <label for="floatingPassword">Password</label>
             </div>
-            <Link to="/dashboard">
+            <Link to="/blogs">
               <button
                 onClick={loginSubmit}
                 type="button"
@@ -83,9 +92,9 @@ const Account = () => {
                 Login
               </button>
             </Link>
-            <Link to="/dashboard">
+            <Link to="/blogs">
               <button
-              onClick={googleAuth}
+                onClick={handleGoogle}
                 type="button"
                 className="mx-2 btn btn-outline-dark active btn-lg"
               >
@@ -94,7 +103,7 @@ const Account = () => {
             </Link>
           </div>
           {/* SING UP AREA  */}
-          <div className="col-6">
+          <div className="col-md-6 my-3">
             <h1 className="mb-4">SING UP</h1>
             {/* <div className="form-floating mb-3">
               <input
@@ -136,13 +145,15 @@ const Account = () => {
               />
               <label for="floatingPassword">Confirm Password</label>
             </div> */}
-            <button
-              onClick={registerSubmit}
-              type="button"
-              className="btn btn-outline-dark active btn-lg"
-            >
-              Sing Up
-            </button>
+            <Link to="/blogs">
+              <button
+                onClick={registerSubmit}
+                type="button"
+                className="btn btn-outline-dark active btn-lg"
+              >
+                Sing Up
+              </button>
+            </Link>
           </div>
         </div>
       </Container>

@@ -43,13 +43,13 @@ const BlogList = () => {
                   src={blog.img}
                   alt="Category"
                 />
-                <div className="p-3">
+                <div className="p-3 list-area">
                   <h5 className="py-2">{blog.title}</h5>
                   <div className="d-flex justify-content-between">
                     <Link to={`/dashboard/blogList/${blog._id}`}>
                       <button
                         type="button"
-                        className="btn btn-outline-success mx-1"
+                        className="btn btn-outline-success m-1"
                       >
                         Update
                       </button>
@@ -57,7 +57,7 @@ const BlogList = () => {
                     <button
                       onClick={() => handleBlogDelete(blog._id)}
                       type="button"
-                      className="btn btn-outline-danger mx-1"
+                      className="btn btn-outline-danger m-1"
                     >
                       Delete
                     </button>

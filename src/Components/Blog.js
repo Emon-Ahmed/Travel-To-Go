@@ -6,11 +6,12 @@ import useAuth from "../Hooks/useAuth";
 
 const Blog = ({blog}) => {
   const {setCompare, compare} = useAuth()
-  console.log(compare)
+
   const handleCompare = (blogData) =>{
     const check = compare.find(i=> i._id === blogData._id)
     if(check) return alert('Item is already added')
     setCompare([...compare, blogData])
+    alert(`${blog.title} is Added`)
   }
  
   return (

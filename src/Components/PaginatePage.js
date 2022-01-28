@@ -6,7 +6,7 @@ import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
 
 const PaginatePage = ({ pageCount, changePage }) => {
   return (
-    <div className="d-flex justify-content-center p-5">
+    <div className="d-flex justify-content-center p-4 mt-5 ">
       <ReactPaginate
         breakClassName="page-item"
         breakLinkClassName="page-link"

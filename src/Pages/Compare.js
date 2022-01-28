@@ -5,24 +5,28 @@ import useAuth from "../Hooks/useAuth";
 
 const Compare = () => {
   const { compare } = useAuth();
-  console.log(compare);
+  // alert(compare);
   return (
     <div>
       <SubHeader pageName="Compare" />
-      <Container className="py-5 text-center">
+      <Container className="my-5 text-center overflow-auto">
         <table className="table table-striped">
           <thead>
             <tr>
-              <th scope="col">No</th>
-              <th scope="col">Blog Name1</th>
-              <th scope="col">Blog Name2</th>
+              <th scope="col">Name</th>
+              <th scope="col">Traveler</th>
+              <th scope="col">Category</th>
+              <th scope="col">Cost</th>
+              <th scope="col">Rating</th>
             </tr>
           </thead>
           <tbody>
             {compare.map((i) => (
               <tr>
-                <th scope="row">1</th>
-                <td>{i.title}</td>
+                <th scope="row">{i.title}</th>
+                <td>{i.traveler}</td>
+                <td>{i.category}</td>
+                <td>{i.cost}</td>
                 <td>{i.rating}</td>
               </tr>
             ))}

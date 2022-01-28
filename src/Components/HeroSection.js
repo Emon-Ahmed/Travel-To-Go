@@ -11,8 +11,8 @@ const HeroSection = () => {
           <div className="hero-img">
             <img src={Hero1} alt="HERO1" className="hero-img1 me-4" />
           </div>
-          <div className="hero-img hero-section2 mt-5">
-            <div className="d-flex justify-content-between px-5 py-5 pb-2">
+          <div className="text-center hero-img hero-section2 mt-5">
+            <div className="d-flex text center justify-content-between px-5 py-5 pb-2">
               <div className="text-center">
                 <h1 className="fw-bold display-4">38 &deg; </h1>
                 <p className="fw-bold text-secondary">Temperature</p>

@@ -9,10 +9,10 @@ const Dashboard = () => {
   return (
     <div>
       <SubHeader pageName="Dashboard" />
-      <div className="py-5 my-5">
+      <div className="py-4 my-4">
         <Container>
           <div className="row">
-            <div className="col-3">
+            <div className="col-md-3">
               <div className="dashboard-navbar">
                 <nav className="nav flex-column">
                   <Link
@@ -51,7 +51,7 @@ const Dashboard = () => {
                 </nav>
               </div>
             </div>
-            <div className="col-9">
+            <div className="col-md-9 my-2">
               <div className="dashboard-sidebar">
                 <Outlet />
               </div>

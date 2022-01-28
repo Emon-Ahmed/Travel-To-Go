@@ -22,34 +22,37 @@ const useFirebase = () => {
   const provider = new GoogleAuthProvider();
 
   // Google Auth
-  const googleAuth = () => {
-    signInWithPopup(auth, provider)
+  const googleAuth = (redirect) => {
+    signInWithPopup(auth, provider )
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
+        redirect()
       })
       .catch((error) => {
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
   };
-  const regiUser = (email, password) => {
+  const regiUser = (email, password, redirect) => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         saveUser(email, "POST");
         setError("");
+        redirect()
       })
       .catch((error) => {
         setError(error.message);
       })
       .finally(() => setLoading(false));
   };
-  const loginUser = (email, password) => {
+  const loginUser = (email, password, redirect) => {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setError("");
+        redirect()
       })
       .catch((error) => {
         setError(error.message);

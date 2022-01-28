@@ -5,7 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 const AddBlog = () => {
   const navigate = useNavigate();
 
-  const {admin} = useAuth()
+  const { admin } = useAuth();
 
   const titleRef = useRef();
   const imgRef = useRef();
@@ -44,7 +44,10 @@ const AddBlog = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({...newBlog, status: admin ? 'approved' : 'pending' }),
+      body: JSON.stringify({
+        ...newBlog,
+        status: admin ? "approved" : "pending",
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -68,6 +71,7 @@ const AddBlog = () => {
       <h1 className="mb-3">Add Your Blog or Your Experience</h1>
       <div className="form-floating mb-3">
         <input
+        required
           type="text"
           className="form-control"
           id="floatingInput"
@@ -157,10 +161,12 @@ const AddBlog = () => {
         </div>
         <div className="form-floating mb-3 w-50">
           <input
+            min="0"
+            max="5"
             type="number"
             className="form-control"
             id="floatingInput"
-            placeholder="Your Name"
+            placeholder="Rating"
             ref={ratingRef}
           />
           <label for="floatingInput">Rating</label>
