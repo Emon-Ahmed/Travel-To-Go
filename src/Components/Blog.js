@@ -23,7 +23,7 @@ const Blog = ({ blog }) => {
             <Link to={`/blogs/${blog._id}`}>
               <h5 className="text-black text-decoration-none">{blog.title.substring(0, 20)}</h5>
             </Link>
-            <p className="text-secondary">{blog.description.substring(0, 75)}</p>
+            <p className="text-secondary">{blog.description.substring(0, 65)}</p>
           </div>
           <div className="d-flex justify-content-between mx-2">
             <div data-tip="Blog Rating">
