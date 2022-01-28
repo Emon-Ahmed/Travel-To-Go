@@ -1,5 +1,5 @@
 # Travel Fast
-Live demo [_Click Here_](https://travel-fast-project.web.app//)
+Live demo [_Click Here_](https://travel-fast-project.web.app/)
 
 ```
 https://travel-fast-project.web.app/
