@@ -45,7 +45,7 @@ const CategoryList = () => {
                 alt="Category"
               />
               <div className="p-2">
-                <h5 className="py-2">{category.Title}</h5>
+                <h5 className="py-2">{category.Title.substring(0, 20)}</h5>
                 <div className="d-flex justify-content-between">
                   <Link to={`/dashboard/categoryList/${category._id}`}>
                     <button

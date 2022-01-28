@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Trip1 from "./../Images/trip1.png";
 import Trip2 from "./../Images/tipe2.png";
+import { Link } from "react-router-dom";
 
 const TripBlogSection = () => {
   return (
@@ -25,9 +26,11 @@ const TripBlogSection = () => {
                   <h2 className="text-white py-2">
                     Top 10 thing to do When <br /> Bali Indonesia
                   </h2>
-                  <p className="d-flex align-items-center color-primary h-line">
-                    READ MORE
-                  </p>
+                  <Link to="/blogs">
+                    <p className="d-flex align-items-center color-primary h-line">
+                      READ MORE
+                    </p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -40,9 +43,11 @@ const TripBlogSection = () => {
               <h3 className="text-white">
                 Top 10 things to do in <br /> Sri Lanka
               </h3>
-              <p className="d-flex align-items-center color-primary h-line">
-                READ MORE
-              </p>
+              <Link to="/blogs">
+                <p className="d-flex align-items-center color-primary h-line">
+                  READ MORE
+                </p>
+              </Link>
             </div>
           </div>
         </div>

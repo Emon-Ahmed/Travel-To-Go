@@ -7,6 +7,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,9 +16,11 @@ const Footer = () => {
         <div>
           <div className="row">
             <div className="col-md-3">
-              <span className="text-black fw-bold h4">
-                travelFast <span className="footer-icon">.</span>
-              </span>
+              <Link to="/">
+                <span className="text-black fw-bold h4">
+                  travelFast <span className="footer-icon">.</span>
+                </span>
+              </Link>
               <div className="d-flex justify-content-between pe-4 py-5 footer-icon">
                 {/* <FaGooglePlusG /> */}
                 <FaFacebookF />
@@ -70,7 +73,7 @@ const Footer = () => {
         </div>
         <hr />
         <div className="d-flex justify-content-between">
-          <span>&copy; 2022 Travel Fast || All rights resolved</span>
+          <span>&copy; 2022 Travel Fast</span>
           <span>Dhaka, Bangladesh</span>
         </div>
       </Container>

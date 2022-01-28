@@ -19,7 +19,7 @@ const BlogDetails = () => {
       <Container>
         <div className="my-5">
           <div className="row">
-            <div className="col-9">
+            <div className="col-md-9">
               <div>
                 <div>
                   <img
@@ -38,7 +38,7 @@ const BlogDetails = () => {
 
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-md-3">
               <div>
                 <p className="blog-info">Total Cost: {blogDetails.cost} </p>
                 <p className="blog-info">Traveler: {blogDetails.traveler}</p>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Hero1 from "../Images/hero1.png";
 import Hero2 from "../Images/hero2.png";
 
@@ -33,10 +34,14 @@ const HeroSection = () => {
             <img src={Hero2} alt="HERO1" className="hero-img2" />
             <div className="z-index back-dark p-4 pt-5 me-5 header-paragraph shadow">
               <div className="pt-5">
-                <p className="d-flex align-items-center color-primary h-line h5">
-                  PLACE
-                </p>
-                <h2 className="text-white py-2">Bondi Beach <br /> Australia</h2>
+                <Link to="/blogs">
+                  <p className="d-flex align-items-center color-primary h-line h5">
+                    PLACE
+                  </p>
+                </Link>
+                <h2 className="text-white py-2">
+                  Bondi Beach <br /> Australia
+                </h2>
               </div>
             </div>
           </div>

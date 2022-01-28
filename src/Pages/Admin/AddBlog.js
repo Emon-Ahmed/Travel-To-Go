@@ -4,7 +4,6 @@ import useAuth from "../../Hooks/useAuth";
 
 const AddBlog = () => {
   const navigate = useNavigate();
-
   const { admin } = useAuth();
 
   const titleRef = useRef();
@@ -71,7 +70,6 @@ const AddBlog = () => {
       <h1 className="mb-3">Add Your Blog or Your Experience</h1>
       <div className="form-floating mb-3">
         <input
-        required
           type="text"
           className="form-control"
           id="floatingInput"

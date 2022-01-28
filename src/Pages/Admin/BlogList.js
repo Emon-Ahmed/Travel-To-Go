@@ -44,7 +44,7 @@ const BlogList = () => {
                   alt="Category"
                 />
                 <div className="p-3 list-area">
-                  <h5 className="py-2">{blog.title}</h5>
+                  <h5 className="py-2">{blog.title.substring(0, 20)}</h5>
                   <div className="d-flex justify-content-between">
                     <Link to={`/dashboard/blogList/${blog._id}`}>
                       <button
