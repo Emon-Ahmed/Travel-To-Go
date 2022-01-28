@@ -5,7 +5,7 @@ import { BsBoxArrowUpRight, BsFillPlayFill } from "react-icons/bs";
 import useAuth from "../Hooks/useAuth";
 
 const Header = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   return (
     <div className="main-banner">
       <div className="nav-bar py-3">
@@ -47,7 +47,7 @@ const Header = () => {
       </div>
       <div className="py-5 mt-4">
         <Container>
-          <h1 className="text-white display-1 banner-fs fw-bolder">
+          <h1 className="header-text text-white display-1 banner-fs fw-bolder">
             Discover the <br /> Touch of Nature
           </h1>
           <div className="my-5 pt-4 d-flex align-items-center">

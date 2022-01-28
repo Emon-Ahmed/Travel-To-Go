@@ -1,17 +1,17 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Hero1 from "../Images/hero1.jpg";
-import Hero2 from "../Images/hero2.jpg";
+import Hero1 from "../Images/hero1.png";
+import Hero2 from "../Images/hero2.png";
 
 const HeroSection = () => {
   return (
     <Container>
-      <div className="my-5 py-4">
+      <div className="hero-section my-5 py-4">
         <div className="w-100 d-flex">
           <div className="hero-img">
             <img src={Hero1} alt="HERO1" className="hero-img1 me-4" />
           </div>
-          <div className="hero-img mt-5">
+          <div className="hero-img hero-section2 mt-5">
             <div className="d-flex justify-content-between px-5 py-5 pb-2">
               <div className="text-center">
                 <h1 className="fw-bold display-4">38 &deg; </h1>

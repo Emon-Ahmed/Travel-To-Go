@@ -17,7 +17,7 @@ const Blog = ({blog}) => {
     <div className="mx-3">
       <div className="blog my-3">
         <img src={blog.img} alt="Blog" />
-        <div className="p-3">
+        <div className="p-3 innerBlog">
           <div className="mx-2 text-left">
             <Link to={`/blogs/${blog._id}`}>
                <h5 className="text-black text-decoration-none">{blog.title}</h5>

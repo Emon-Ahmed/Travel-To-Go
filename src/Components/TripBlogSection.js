@@ -1,12 +1,12 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Trip1 from "./../Images/trip1.jpg";
-import Trip2 from "./../Images/tipr2.jpg";
+import Trip1 from "./../Images/trip1.png";
+import Trip2 from "./../Images/tipe2.png";
 
 const TripBlogSection = () => {
   return (
-    <Container>
-      <div className="d-flex justify-content-center mb-5 pb-5">
+    <Container className="tripsection">
+      <div className="tripblog d-flex justify-content-center mb-5 pb-5">
         <div className="mx-2">
           <div className="tripText mx-3">
             <h1 className="display-5 fw-bolder">
@@ -33,13 +33,13 @@ const TripBlogSection = () => {
             </div>
           </div>
         </div>
-        <div className="tripImage mx-3">
+        <div className="tripImage mx-2">
           <img className="tripImage2 pl-2" src={Trip2} alt="Image" />
           <div className="z-index back-dark p-4 trip-paragraph shadow">
             <div>
-              <h2 className="text-white">
+              <h3 className="text-white">
                 Top 10 things to do in <br /> Sri Lanka
-              </h2>
+              </h3>
               <p className="d-flex align-items-center color-primary h-line">
                 READ MORE
               </p>
